@@ -1,6 +1,6 @@
 $file = ".\wordlist.txt"
 $content = (Get-Content -Path $file -Encoding UTF8) -join ''
-[System.Collections.ArrayList\$words = $content -split ',\s' | ForEach-Object { "$_" }
+[System.Collections.ArrayList]$words = $content -split ',\s*' | ForEach-Object { "$_" }
 while ($true) {
   $word1 = (Get-Random $words.ToArray());
   $word2 = (Get-Random $words.ToArray());
